@@ -287,4 +287,7 @@ interface Cheats {
     function pauseGasMetering() external;
     // Resumes gas metering from where it left off
     function resumeGasMetering() external;
+
+    // Resets the access list: warm addresses and storage slots will not longer be warm
+    function cool() external;
 }

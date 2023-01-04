@@ -474,6 +474,10 @@ pub fn apply<DB: DatabaseExt>(
             state.gas_metering = None;
             Bytes::new()
         }
+        HEVMCalls::Cool(_) => {
+            data.env.tx.access_list = Vec::new();
+            Bytes::new()
+        }
         _ => return Ok(None),
     };
 
